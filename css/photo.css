@@ -1,0 +1,307 @@
+img {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: fill;
+    margin: auto;
+}
+
+/* main */
+#photo {
+    background-color: var(--lt-color-gray-800);
+    background-size: cover;
+    padding: 0 0.8rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-size: 6rem;
+    font-family: 'Alice', 'PT Sans';
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    background: linear-gradient(to right, var(--color3), var(--color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    color: var(--color3)
+}
+
+.photo p {
+    color: var(--color6);
+    margin: 0 1rem;
+}
+
+.photo-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 24.5vw;
+    grid-gap: 0.5vw;
+    margin: 0 auto;
+}
+
+.griditem {
+    background-size: cover;
+    background-position: center;
+    font-size: 0.8em;
+    box-sizing: border-box;
+}
+
+.griditem:hover {
+    cursor: pointer;
+    filter: brightness(85%) grayscale(50%);
+    transform: scale(0.98);
+    transition: 0.7s ease-out;
+}
+
+.image1 {
+    background-position: left center;
+    background-image: url("../images/photo-grid/photo-grid\ \(1\).jpg");
+}
+
+.image2 {
+    background-image: url("../images/photo-grid/photo-grid\ \(2\).jpg");
+}
+
+.image3 {
+    background-image: url("../images/photo-grid/photo-grid\ \(3\).jpg");
+}
+
+.image4 {
+    background-image: url("../images/photo-grid/photo-grid\ \(4\).jpg");
+}
+
+.image5 {
+    background-image: url("../images/photo-grid/photo-grid\ \(5\).jpg");
+}
+
+.image6 {
+    background-image: url("../images/photo-grid/photo-grid\ \(6\).jpg");
+}
+
+.image7 {
+    background-image: url("../images/photo-grid/photo-grid\ \(7\).jpg");
+}
+
+.image8 {
+    background-image: url("../images/photo-grid/photo-grid\ \(8\).jpg");
+}
+
+.image9 {
+    background-image: url("../images/photo-grid/photo-grid\ \(9\).jpg");
+}
+
+.image10 {
+    background-image: url("../images/photo-grid/photo-grid\ \(10\).jpg");
+}
+
+.image11 {
+    background-image: url("../images/photo-grid/photo-grid\ \(11\).jpg");
+}
+
+.image12 {
+    background-image: url("../images/photo-grid/photo-grid\ \(12\).jpg");
+}
+
+/* band grid */
+.bands {
+    margin-left: 6rem;
+    padding-bottom: 2rem;
+    display: grid;
+    /* brak responsywnosci */
+    grid-template-columns: repeat(6, 200px);
+    grid-template-rows: repeat(3, 200px);
+    /* grid-template-columns: repeat(6, 1fr); */
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-gap: 0.2vw;
+}
+
+.gridband {
+    font-size: 22px;
+    color: var(--color7);
+    border-radius: 3rem;
+    text-align: end;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.band-des {
+    color: var(--color2);
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.band-des p {
+    text-align: center;
+}
+
+.band-des a {
+    color: var(--color6);
+    font-size: 25px;
+}
+
+.band-social {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+}
+
+.band-info {
+    grid-area: 1 / 5 / 4 / 7;
+    overflow: hidden;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.band1 {
+    background-image: url("../images/bands/readymade.jpg");
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.band2 {
+    background-image: url("../images/bands/BBP.jpg");
+}
+
+.band3 {
+    background-image: url("../images/bands/malpy.jpg");
+}
+
+.band4 {
+    background-image: url("../images/bands/fred.jpg");
+}
+
+.band5 {
+    background-image: url("../images/bands/aneli.jpg");
+}
+
+.band6 {
+    background-image: url("../images/bands/chinto.jpg");
+}
+
+/* modal after click */
+.modal {
+    z-index: 3;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 35px;
+    margin-top: rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lt-color-gray-800);
+}
+
+.modal-content {
+    display: block;
+}
+
+.modal-btn {
+    color: var(--lt-color-gray-100);
+    padding: 4px 8px;
+    position: absolute;
+    right: 4vw;
+    top: 3vh;
+}
+
+.modal-btn:hover {
+    background-color: var(--color5);
+    color: white;
+    cursor: pointer;
+}
+
+.animate-zoom {
+    animation: animatezoom 0.7s;
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 4rem;
+        padding-top: 3rem;
+    }
+
+    h3 {
+        font-size: 0.9em;
+    }
+
+    .photo p {
+        font-size: 0.7em;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        display: block;
+        object-fit: contain;
+        /* margin: auto; */
+    }
+
+    .bands {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 0.7fr);
+        margin: 0;
+    }
+
+    .band-info {
+        grid-area: auto;
+        overflow: hidden;
+        font-family: 'Work Sans', sans-serif;
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .band1 {
+        background-image: url("../images/bands/readymade.jpg");
+        grid-area: auto;
+    }
+
+    .artists {
+        padding: 0;
+        margin: 0;
+    }
+
+    .modal {
+        z-index: 3;
+        overflow: hidden;
+        background-color: var(--lt-color-gray-800);
+    }
+
+    .modal-btn {
+        background-color: var(--color5);
+        right: 4vw;
+        top: 5vh;
+        opacity: .5;
+    }
+
+    .modal-btn:hover {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 3rem;
+        padding-top: 3rem;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .photo p {
+        font-size: 0.6em;
+    }
+
+    .modal-btn {
+        top: 2.75vh;
+    }
+}
