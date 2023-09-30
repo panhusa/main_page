@@ -226,12 +226,12 @@ h3 {
 
 @media (max-width: 992px) {
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
         padding-top: 3rem;
     }
 
     h3 {
-        font-size: 0.9em;
+        font-size: 2rem;
         margin: 1rem;
 
     }

@@ -6,8 +6,6 @@
     overflow: hidden !important;
 }
 
-
-/* header */
 .main {
     display: flex;
     position: relative;
@@ -22,7 +20,7 @@
     position: relative;
     width: auto;
     height: 300px;
-    background-image: url('../images/photo-grid\ \(7\).jpg');
+    background-image: url('../images/photo-grid/photo-grid\ \(6\).jpg');
     background-size: cover;
     background-position: center;
     margin: auto 0 auto;
@@ -44,8 +42,6 @@
     font-size: 3em;
     text-transform: uppercase;
 }
-
-
 
 @media (max-width: 992px) {
     .body {
@@ -86,7 +82,7 @@
         line-height: 1.6;
     }
 
-    .header-img {
+    .main-img {
         width: 100%;
         height: 250px;
     }
