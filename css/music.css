@@ -1,3 +1,7 @@
+.vh-100 {
+    min-height: 100vh;
+}
+
 .overflow-hidden {
     overflow: hidden !important;
 }
@@ -16,7 +20,7 @@
     position: relative;
     width: auto;
     height: 300px;
-    background-image: url('../images/photo-grid/photo-grid\ \(3\).jpg');
+    background-image: url('../images/photo-grid\ \(7\).jpg');
     background-size: cover;
     background-position: center;
     margin: auto 0 auto;
