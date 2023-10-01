@@ -39,6 +39,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     color: var(--lt-color-gray-300);
     font-weight: 500;
+    padding-right: 8px;
 }
 
 .photo-main {
