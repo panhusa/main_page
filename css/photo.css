@@ -249,15 +249,24 @@ h1 {
 
     }
 
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
     .photo-main {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         margin: 1rem;
+        padding: 0;
+        font-size: 4rem;
+
+
     }
 
     .photo p {
-        font-size: 2rem;
         margin: 1rem;
+        font-size: 1.2rem;
     }
 
     img {
@@ -280,6 +289,7 @@ h1 {
         grid-area: auto;
         overflow: hidden;
         font-family: 'Work Sans', sans-serif;
+        padding: 0;
     }
 
     .band1 {
@@ -323,10 +333,6 @@ h1 {
 
     h3 {
         font-size: 1em;
-    }
-
-    .photo p {
-        font-size: 1rem;
     }
 
     .band-des p {
