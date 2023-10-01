@@ -229,11 +229,10 @@ header {
 .pitch h1 {
     padding-top: 2rem;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3em;
+    font-size: 4rem;
     text-transform: uppercase;
     z-index: 2;
     color: var(--lt-color-gray-400);
-
 }
 
 .pitch p {
