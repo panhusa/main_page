@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Kanit&family=Merriweather:ital,wght@0,400;1,700&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Alice&family=Kanit&family=Merriweather:ital,wght@0,400;1,700&family=Oswald:wght@500&family=Work+Sans&display=swap');
+/* font-family: 'Alegreya', serif;
+font-family: 'Alice', serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+
 
 :root {
     --transition: all 300ms ease-in-out;
-    --color1: #19381F;
+    --color1: #1d1e20;
     --color2: #98473e;
-    --color3: #D8973C;
-    --color4: #7C90A0;
-    --color5: #2B3A67;
-    --color6: #eeba2b;
+    --color3: #f1f4f9;
+    --color4: #f7e0b6;
+    --color5: #1c355e;
+    --color6: #f5aa1c;
     /* ------------ */
     --lt-color-gray-100: #f8f9fc;
     --lt-colors-gray-200: #f1f3f9;
@@ -52,7 +59,6 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     position: fixed;
     top: 0;
     left: 0;
@@ -79,7 +85,7 @@ body {
 
 .navbar-name {
     text-decoration: none;
-    color: var(--color3);
+    color: var(--color6);
 }
 
 .navbar-menu {
@@ -102,9 +108,9 @@ body {
 }
 
 .navbar-menu a:hover {
-    background-color: #555;
+    background-color: var(--color5);
     height: 30px;
-    color: var(--lt-color-gray-900);
+    color: var(--color4);
 }
 
 /* header */
@@ -117,7 +123,6 @@ header {
 }
 
 .header-content {
-    z-index: 1;
     padding: 50px 15rem;
     background: url('../images/header-pic.jpg') center/cover;
     height: 60vh;
@@ -149,14 +154,10 @@ header {
     line-height: 1.5;
 }
 
-.typewrite {
-    margin: 0 1rem 0 3rem;
+.write {
+    margin: 0 1rem 0 2.4rem;
     padding: 0.5rem 2rem;
-    background: transparent !important;
-    color: var(--lt-color-gray-100);
     font: large 'Kanit', sans-serif;
-    /* width: 200px; */
-    text-align: center;
 }
 
 /* main */
@@ -165,16 +166,16 @@ header {
 }
 
 .row {
+    position: relative;
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
     object-fit: cover;
 }
 
 .row a {
     text-decoration: none;
-    color: var(--color6);
     font-size: 4rem;
+    text-transform: uppercase;
 }
 
 #items {
@@ -194,7 +195,7 @@ header {
 
 .desc {
     font-size: 3rem;
-    color: var(--color6);
+    color: var(--lt-color-gray-300);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -206,11 +207,11 @@ header {
     cursor: pointer;
     filter: brightness(85%) grayscale(50%);
     transform: scale(1.03);
-    transition: 1s ease-out;
+    transition: 0.8s ease-out;
 }
 
 .photographer {
-    background: url('../images/about.jpg');
+    background: url('../images/photo.jpg');
 }
 
 .musician {
@@ -222,34 +223,33 @@ header {
 }
 
 .pitch {
+    position: relative;
     text-align: center;
-    background: var(--lt-color-gray-800);
-}
-
-.pitch h1,
-.pitch p {
-    color: var(--color6);
 }
 
 .pitch h1 {
+    padding-top: 2rem;
+    font-family: 'Oswald', sans-serif;
     font-size: 3em;
     text-transform: uppercase;
+    background: linear-gradient(to left, var(--color4), var(--color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
 }
 
 .pitch p {
+    font-size: 2rem;
+    font-family: 'Alegreya', serif;
     margin: 2rem 7rem;
+    color: var(--color2);
 }
 
 .content {
     position: relative;
-    z-index: 2;
     box-shadow: 0 -8px 10px #0000004d;
 }
 
-/* .container-fluid {
-    width: 100%;
-    margin: 0;
-} */
 
 .overflow-hidden {
     overflow: hidden !important;
@@ -277,7 +277,6 @@ footer {
 .social {
     display: flex;
     gap: 10px;
-    align-items: center;
 }
 
 .social a {
@@ -319,32 +318,21 @@ footer {
 }
 
 @media (max-width: 992px) {
-
-
     .header-content {
         padding: 50px 60px;
         height: 100vh;
 
     }
 
-    .desc {
-        position: relative;
-    }
-
-    .pitch h1,
-    .pitch p {
+    .pitch h1 {
         margin: 0;
         padding: 1rem;
-        color: var(--color6);
-    }
-
-    .pitch h1 {
         font-size: 2em;
         text-transform: uppercase;
     }
 
     .pitch p {
-        padding: 1.5rem;
+        margin: 2rem;
     }
 
     /* ---------nav i footer---------- */
@@ -433,7 +421,6 @@ footer {
     .banner {
         height: 100vh;
     }
-
 }
 
 @media (max-width: 576px) {
