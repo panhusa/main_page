@@ -18,13 +18,15 @@ h1 {
     letter-spacing: 3px;
     font-weight: 600;
     font-size: 6rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     text-align: center;
     padding-top: 2rem;
     margin-top: 2rem;
-    background: linear-gradient(to right, var(--color3), var(--color2));
+    color: var(--lt-color-gray-400);
+
+    /* background: linear-gradient(to right, var(--color3), var(--color2));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 
 /* .photo h3 {
@@ -34,7 +36,9 @@ h1 {
 } */
 
 .photo p {
-    color: var(--color6);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--lt-color-gray-300);
+    font-weight: 500;
 }
 
 .photo-main {
@@ -147,16 +151,23 @@ h1 {
 
 .band-des p {
     text-align: center;
+    color: var(--color6);
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
 }
 
 .band-des a {
-    color: var(--color6);
+    color: var(--lt-color-gray-300);
     font-size: 25px;
 }
 
 .band-social {
     display: flex;
     justify-content: space-evenly;
+}
+
+.band-des a:hover {
+    color: var(--color6);
 }
 
 .band-info {
@@ -249,7 +260,6 @@ h1 {
         margin: 1rem;
     }
 
-
     img {
         height: 100%;
         width: 100%;
@@ -316,7 +326,11 @@ h1 {
     }
 
     .photo p {
-        font-size: 0.8em;
+        font-size: 1rem;
+    }
+
+    .band-des p {
+        font-size: 2rem;
     }
 
     .modal-btn {

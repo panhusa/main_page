@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Alice&family=Kanit&family=Merriweather:ital,wght@0,400;1,700&family=Oswald:wght@500&family=Work+Sans&display=swap');
-/* font-family: 'Alegreya', serif;
-font-family: 'Alice', serif;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Kanit&family=Merriweather:ital,wght@0,400;1,700&family=Montserrat:wght@400;500&family=Oswald:wght@500&display=swap');
+/* font-family: 'Barlow Condensed', sans-serif;
 font-family: 'Kanit', sans-serif;
 font-family: 'Merriweather', serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Work Sans', sans-serif; */
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif; */
 
 
 :root {
@@ -17,7 +16,7 @@ font-family: 'Work Sans', sans-serif; */
     --color6: #f5aa1c;
     /* ------------ */
     --lt-color-gray-100: #f8f9fc;
-    --lt-colors-gray-200: #f1f3f9;
+    --lt-color-gray-200: #f1f3f9;
     --lt-color-gray-300: #dee3ed;
     --lt-color-gray-400: #c2c9d6;
     --lt-color-gray-500: #8f96a3;
@@ -229,20 +228,19 @@ header {
 
 .pitch h1 {
     padding-top: 2rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 3em;
     text-transform: uppercase;
-    background: linear-gradient(to left, var(--color4), var(--color2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     z-index: 2;
+    color: var(--lt-color-gray-400);
+
 }
 
 .pitch p {
     font-size: 2rem;
-    font-family: 'Alegreya', serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 2rem 7rem;
-    color: var(--color2);
+    color: var(--lt-color-gray-300);
 }
 
 .content {
@@ -286,7 +284,7 @@ footer {
 }
 
 .social a:hover {
-    color: var(--color2);
+    color: var(--color6);
 }
 
 .logo {
