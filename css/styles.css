@@ -149,10 +149,10 @@ header {
     line-height: 1.5;
 }
 
-.write {
+.typewrite {
     margin: 0 1rem 0 3rem;
     padding: 0.5rem 2rem;
-    /* background: transparent !important; */
+    background: transparent !important;
     color: var(--lt-color-gray-100);
     font: large 'Kanit', sans-serif;
     /* width: 200px; */
