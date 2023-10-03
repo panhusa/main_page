@@ -1,11 +1,3 @@
-/* .vh-100 {
-    min-height: 100vh;
-} */
-
-.overflow-hidden {
-    overflow: hidden !important;
-}
-
 .main {
     display: flex;
     position: relative;
@@ -68,8 +60,8 @@
 }
 
 .youtube-mov {
-    width: 500px;
-    height: 290px;
+    width: auto;
+    /* height: 290px; */
 }
 
 .spotify-player {
@@ -112,6 +104,21 @@
     .content p {
         padding: 1.5rem;
     }
+
+    .media {
+        display: flex;
+        flex-direction: column;
+        background: var(--lt-color-gray-800);
+    }
+
+    .youtube-player {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .youtube-mov {
+        width: 100%;
+    }
+
 }
 
 /* @media (max-width: 576px) {} */
