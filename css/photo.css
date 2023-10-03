@@ -23,17 +23,7 @@ h1 {
     padding-top: 2rem;
     margin-top: 2rem;
     color: var(--lt-color-gray-400);
-
-    /* background: linear-gradient(to right, var(--color3), var(--color2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
 }
-
-/* .photo h3 {
-    color: var(--color2);
-    font-family: 'Merriweather', serif;
-    font-size: 3rem;
-} */
 
 .photo p {
     font-family: 'Montserrat', sans-serif;
@@ -46,7 +36,6 @@ h1 {
     display: grid;
     padding: 1rem 2rem;
     grid-template-columns: repeat(2, 1fr);
-
 }
 
 .grid-container {
@@ -174,10 +163,11 @@ h1 {
 }
 
 .band-info {
+    grid-area: 1 / 7 / 3 / 8;
     overflow: hidden;
     font-family: 'Merriweather', serif;
-    padding: 0 2rem;
-    margin: 2rem;
+    padding: 0;
+    margin: 1rem;
 }
 
 .band1 {
@@ -249,12 +239,10 @@ h1 {
     h3 {
         font-size: 2rem;
         margin: 1rem;
-
     }
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
-
     }
 
     .photo-main {
@@ -263,13 +251,11 @@ h1 {
         margin: 1rem;
         padding: 0;
         font-size: 4rem;
-
-
     }
 
     .photo p {
         margin: 1rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     img {
@@ -277,19 +263,21 @@ h1 {
         width: 100%;
         display: block;
         object-fit: contain;
-        /* margin: auto; */
     }
 
     .bands {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 0.7fr);
+        grid-template-rows: repeat(2, 1fr);
         margin: 0;
         padding-bottom: 6px;
+    }
 
+    .band-des p {
+        font-size: 2rem;
     }
 
     .band-info {
-        grid-area: auto;
+        grid-area: 1 / 1 / 2 / 3;
         overflow: hidden;
         font-family: 'Work Sans', sans-serif;
         padding: 0;
@@ -301,7 +289,6 @@ h1 {
     }
 
     .gridband {
-        height: 120px;
         margin: 4px 0;
     }
 
