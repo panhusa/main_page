@@ -132,7 +132,7 @@ header {
 .header-img {
     width: 200px;
     height: 200px;
-    background: url('../images/DSC06936.jpg') center/cover;
+    background: url('../images/about.jpg') center/cover;
     border-radius: 50%;
     margin: 0;
     padding: 0;
@@ -218,7 +218,7 @@ header {
 }
 
 .coding {
-    background: url('../images/photo-grid\ \(7\).jpg');
+    background: url('../images/code.jpg');
 }
 
 .pitch {
