@@ -196,10 +196,10 @@ header {
 .desc {
     font-size: 3rem;
     font-family: 'Oswald', sans-serif;
-    background: linear-gradient(to right, var(--color4), var(--lt-color-gray-300));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     position: absolute;
+    -webkit-text-fill-color: var(--color6);
+    -webkit-text-stroke-color: var(--lt-color-gray-800);
+    -webkit-text-stroke-width: 1px; 
     bottom: 0;
     left: 0;
     right: 0;
