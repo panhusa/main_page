@@ -189,7 +189,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     display: inline-block;
 }
 
@@ -210,7 +210,8 @@ header {
     cursor: pointer;
     filter: brightness(85%) grayscale(50%);
     transform: scale(1.03);
-    transition: 0.8s ease-out;
+    transition: 0.8s ease-in-out;
+    z-index: 1;
 }
 
 .photographer {
@@ -219,10 +220,11 @@ header {
 
 .musician {
     background: url('../images/music.jpg');
-}
+  }
 
 .coding {
-    background: url('../images/code.jpg');
+    background: url('../images/code.jpg');    
+
 }
 
 h1 {
