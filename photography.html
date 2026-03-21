@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>Photography</title>
     <link rel="icon" type="image/png" href="images/PanHusa-logo.png" sizes="16x16">
     <link rel="stylesheet" href="css/styles.css">
@@ -83,12 +83,17 @@
                 </div>
             </div>
             <div id="modal01" class="modal">
-                <img id="img01" class="mod-img animate-zoom">
-                <div id="btn1" class="modal-btn ">Close</div>
+                <div class="modal-inner">
+                    <span class="modal-counter" id="modal-counter"></span>
+                    <button class="modal-close" id="btn1">&times;</button>
+                    <button class="modal-arrow modal-prev" id="btn-prev">&#8592;</button>
+                    <img id="img01" class="mod-img">
+                    <button class="modal-arrow modal-next" id="btn-next">&#8594;</button>
+                </div>
             </div>
             <h1 class="artists">Artists I work with</h1>
 
-            <div class="bands" id="grid">
+            <div class="bands" id="bands-grid">
                 <p class="band-info">This is where my musical journey meets your curiosity. Check out the awesome bands
                     I've
                     worked with before. If you're digging the vibe, let's join forces and make some sonic waves
@@ -188,7 +193,7 @@
     <footer class="footer-content">
         <div class="logo">
         </div>
-        <p class="rights">&copy; 2023 Pan Husa Enterprise</p>
+        <p class="rights">&copy; 2026 Pan Husa Enterprise</p>
         <div class="social">
             <a class="instagram" target="_blank" href="https://www.instagram.com/pan_husa/">
                 <i class="fa-brands fa-instagram"></i>

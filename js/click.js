@@ -1,44 +1,59 @@
-// Get all elements with the class "griditem"
-const gridItems = document.querySelectorAll('.griditem');
+const gridItems = Array.from(document.querySelectorAll('.griditem'));
+const modal     = document.getElementById('modal01');
+const img01     = document.getElementById('img01');
+const counter   = document.getElementById('modal-counter');
 
-// Add a click event listener to each grid item
-gridItems.forEach((gridItem) => {
-    gridItem.addEventListener('click', () => {
-        const modal = document.getElementById('modal01');
-        const img01 = document.getElementById('img01');
+let current = 0;
 
-        // Get the background image URL of the clicked element
-        const backgroundImage = window.getComputedStyle(gridItem).getPropertyValue('background-image');
-        const imageURL = backgroundImage.slice(5, -2); // Extract the URL from the computed style
+function getImageUrl(item) {
+    const bg = window.getComputedStyle(item).getPropertyValue('background-image');
+    return bg.slice(5, -2);
+}
 
-        // Check if the imageURL is not empty
-        if (imageURL) {
-            // Set the src attribute of img01 to the imageURL
-            img01.src = imageURL;
+function openModal(index) {
+    current = index;
+    img01.src = getImageUrl(gridItems[current]);
+    counter.textContent = `${current + 1} / ${gridItems.length}`;
+    modal.classList.add('open');
+}
 
-            // Display the modal
-            modal.style.display = 'block';
-        }
-    });
+function closeModal() {
+    modal.classList.remove('open');
+}
+
+function showNext() {
+    current = (current + 1) % gridItems.length;
+    img01.src = getImageUrl(gridItems[current]);
+    counter.textContent = `${current + 1} / ${gridItems.length}`;
+    img01.classList.remove('mod-img');
+    void img01.offsetWidth;
+    img01.classList.add('mod-img');
+}
+
+function showPrev() {
+    current = (current - 1 + gridItems.length) % gridItems.length;
+    img01.src = getImageUrl(gridItems[current]);
+    counter.textContent = `${current + 1} / ${gridItems.length}`;
+    img01.classList.remove('mod-img');
+    void img01.offsetWidth;
+    img01.classList.add('mod-img');
+}
+
+gridItems.forEach((item, index) => {
+    item.addEventListener('click', () => openModal(index));
 });
 
-// Add a click event listener to the close button inside the modal
-const closeModalButton = document.getElementById('btn1');
-closeModalButton.addEventListener('click', () => {
-    const modal = document.getElementById('modal01');
-    modal.style.display = 'none';
+document.getElementById('btn1').addEventListener('click', closeModal);
+document.getElementById('btn-next').addEventListener('click', showNext);
+document.getElementById('btn-prev').addEventListener('click', showPrev);
+
+window.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeModal();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft')  showPrev();
 });
 
-// Add event listeners for the "Esc" key and clicking outside of the modal
-const modal = document.getElementById('modal01');
-window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        modal.style.display = 'none';
-    }
-});
-
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
 });
