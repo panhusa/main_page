@@ -209,42 +209,12 @@ document.head.appendChild(style);
 // ═══════════════════════════════════════════════════════════
 
 function openService(url) {
-    // Use anchor tag for reliable cross-browser compatibility
-    const link = document.createElement('a');
-    link.href = url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open(url, '_blank');
 }
 
-// Attach click handlers to service cards using data-url attribute
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.service-card').forEach(card => {
-        // Observe for animations
-        observer.observe(card);
-
-        // Add click handler
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            const url = this.getAttribute('data-url');
-            if (url) {
-                openService(url);
-            }
-        });
-
-        // Add keyboard accessibility (Enter key)
-        card.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                const url = this.getAttribute('data-url');
-                if (url) {
-                    openService(url);
-                }
-            }
-        });
-    });
+// Observe service cards for animations
+document.querySelectorAll('.service-card').forEach(card => {
+    observer.observe(card);
 });
 
 // ═══════════════════════════════════════════════════════════
