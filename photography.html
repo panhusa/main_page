@@ -1,119 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photography — Dawid Gąsior</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Photography</title>
     <link rel="icon" type="image/png" href="images/PanHusa-logo.png" sizes="16x16">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/photo.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/photo.css">
     <script src="https://kit.fontawesome.com/42e6e4d334.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="navbar-content">
-            <a class="navbar-brand" href="index.html">Dawid Gąsior</a>
-            <nav class="navbar-menu">
-                <a href="index.html" class="nav-link">Back Home</a>
-                <a href="photography.html" class="nav-link">Photography</a>
-                <a href="music.html" class="nav-link">Music</a>
-                <a href="coding.html" class="nav-link">Engineering</a>
-            </nav>
-            <button class="navbar-toggle" id="toggle">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-name" href="index.html">Dawid Gąsior</a>
+            <ul class="navbar-menu">
+                <li class="nav-item"><a class="photo nav-link" href="photography.html">Photography</a></li>
+                <li class="nav-item"><a class="music nav-link" href="music.html">Music</a></li>
+                <li class="nav-item"><a class="code nav-link" href="coding.html">Code</a></li>
+                <!-- <li class="nav-item"><a class="footer nav-link" href="#footer">Contact</a></li> -->
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
-
-    <main class="subsystem-page photo-page">
-        <!-- PAGE HERO -->
-        <section class="page-hero">
-            <div class="page-hero-content">
+    <main>
+        <section id="photo" class="photo">
+            <div class="title">
                 <h1>Photography</h1>
-                <p class="breadcrumb">Home > Photography</p>
-                <p class="page-desc">
-                    3+ years capturing decisive moments across portraits, nature, and urban landscapes.
-                    <br>47 projects. Technical precision. Emotional storytelling.
+            </div>
+            <div class="photo-main">
+                <p class="description">Photography has been my thing for more than three exciting years now. During this
+                    time, I've had the cool opportunity to capture all sorts of moments. From the buzz of events to the
+                    soulful vibes of portraits and the sheer beauty of landscapes, my camera has been right there with
+                    me, turning life's colorful moments into lasting memories. </p>
+                <p class="description">What really gets me about photography is its incredible knack for freezing the
+                    world around us in time, like a magical time capsule. It's pretty mind-blowing when you think about
+                    it – this art form has been around for over two centuries and it's still going strong, evolving
+                    right alongside our fast-changing world. The way it captures moments forever is nothing short of
+                    awe-inspiring.</p>
+                <p class="description">
+                    What makes photography truly enchanting is its knack for taking those fleeting moments and turning
+                    them into timeless memories. It's like a kind of magic, achieved through technology that's been
+                    around for a while but still keeps surprising us. Every time that shutter clicks, it's a reminder of
+                    photography's enduring charm, letting us hold onto the past while keeping an eye on what lies ahead
+                    in the future.
                 </p>
+                <p class="description">Why not join me on this captivating adventure, where history and innovation come
+                    together in a mesmerizing dance? Here, the past and the present weave together, infusing life into
+                    the world with the simple but profound click of a shutter. Together, let's venture into this
+                    captivating crossroads, where every frame spins a tale, and every image shares the secrets of time
+                    itself in hushed whispers.</p>
             </div>
-        </section>
-
-        <!-- GALLERY CATEGORIES -->
-        <section class="gallery-section">
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All (47)</button>
-                <button class="filter-btn" data-filter="portraits">Portraits</button>
-                <button class="filter-btn" data-filter="nature">Nature</button>
-                <button class="filter-btn" data-filter="urban">Urban</button>
-            </div>
-
-            <!-- MASONRY GRID (Vertical Scroll) -->
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- Dynamically populated by JS -->
-            </div>
-        </section>
-
-        <!-- LIGHTBOX MODAL (for clicked images) -->
-        <div class="lightbox-modal" id="lightbox-modal">
-            <div class="lightbox-overlay" onclick="closeLightbox()"></div>
-            <div class="lightbox-container">
-                <button class="lightbox-close" onclick="closeLightbox()">
-                    <i class="fas fa-times"></i>
-                </button>
-                <button class="lightbox-nav prev" onclick="prevImage()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-
-                <div class="lightbox-image-wrapper">
-                    <img id="lightbox-image" src="" alt="Gallery image" class="lightbox-image">
+            <div id="grid" class="grid-container">
+                <div id="image1" class="griditem image1">
                 </div>
-
-                <button class="lightbox-nav next" onclick="nextImage()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-
-                <!-- TOOLTIP with EXIF -->
-                <div class="lightbox-tooltip">
-                    <div class="tooltip-title" id="tooltip-title"></div>
-                    <div class="tooltip-exif" id="tooltip-exif"></div>
-                    <div class="tooltip-counter" id="tooltip-counter"></div>
+                <div id="image2" class="griditem image2">
+                </div>
+                <div id="image3" class="griditem image3">
+                </div>
+                <div id="image4" class="griditem image4">
+                </div>
+                <div id="image5" class="griditem image5">
+                </div>
+                <div id="image6" class="griditem image6">
+                </div>
+                <div id="image7" class="griditem image7">
+                </div>
+                <div id="image8" class="griditem image8">
+                </div>
+                <div id="image9" class="griditem image9">
+                </div>
+                <div id="image10" class="griditem image10">
+                </div>
+                <div id="image11" class="griditem image11">
+                </div>
+                <div id="image12" class="griditem image12">
                 </div>
             </div>
-        </div>
+            <div id="modal01" class="modal">
+                <div class="modal-inner">
+                    <span class="modal-counter" id="modal-counter"></span>
+                    <button class="modal-close" id="btn1">&times;</button>
+                    <button class="modal-arrow modal-prev" id="btn-prev">&#8592;</button>
+                    <img id="img01" class="mod-img">
+                    <button class="modal-arrow modal-next" id="btn-next">&#8594;</button>
+                </div>
+            </div>
+            <h1 class="artists">Artists I work with</h1>
 
-        <!-- STATS -->
-        <section class="stats-section">
-            <div class="stat">
-                <div class="stat-number">47</div>
-                <div class="stat-label">Projects</div>
+            <div class="bands" id="bands-grid">
+                <p class="band-info">This is where my musical journey meets your curiosity. Check out the awesome bands
+                    I've
+                    worked with before. If you're digging the vibe, let's join forces and make some sonic waves
+                    together.
+                    Ready to dive in? Don't hesitate to hit me up, and let's kickstart your creative vision!
+                </p>
+                <div id="band1" class="griditem band1 gridband"></div>
+                <div class="band-des">
+                    <p>Readymade Backsliders</p>
+                    <div class="band-social">
+                        <a target="_blank" href="https://www.instagram.com/readymadebacksliders/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/readymadebacksliders/"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" href="https://open.spotify.com/artist/1bTBjkEtR5f5LXiwR37lu1"><i
+                                class="fa-brands fa-spotify"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCREtyPQwJVdD5rZLu8MjXsw"><i class="fa-brands
+                                fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div id="band2" class="griditem band2 gridband"></div>
+                <div class="band-des">
+                    <p>Binding Blank Pages</p>
+                    <div class="band-social">
+                        <a target="_blank" href="https://instagram.com/bindingblankpages?igshid=NGVhN2U2NjQ0Yg=="><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/bindingblankpages/"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" href=""><i class="fa-brands fa-spotify"></i></a>
+                        <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div id="band3" class="griditem band3 gridband"></div>
+                <div class="band-des">
+                    <p>The Stoned Ape Theory</p>
+                    <div class="band-social">
+                        <a target="_blank" href="https://thestonedapetheory.com/"><i class="fa-solid fa-globe"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/the.stoned.ape.theory/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/thestonedapetheoryofficial"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank"
+                            href="https://open.spotify.com/artist/1p58r3w96fziw339KJo75c?si=WnIDXrBDRWKO6i3QOro-xQ"><i
+                                class="fa-brands fa-spotify"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UC5P6ibAFZ8ysx-OoMMWwiSQ"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div id="band4" class="griditem band4 gridband"></div>
+                <div class="band-des">
+                    <p>Fredy Bony</p>
+                    <div class="band-social">
+                        <a target="_blank" href="https://fredybony.com"><i class="fa-solid fa-globe"></i></a>
+                        <a target="_blank" href="https://instagram.com/fredybonyofficial"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/YougueyW/"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" href="https://open.spotify.com/artist/6kiYBBoSg60oeqsFRhQUav"><i
+                                class="fa-brands fa-spotify"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCRl9KQaRQWN7BqK9dBf42ew"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div id="band5" class="griditem band5 gridband"></div>
+                <div class="band-des">
+                    <p>Anneli Snow</p>
+                    <div class="band-social">
+                        <a target="_blank" href="https://www.instagram.com/annelisnow/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/annelisnow/"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" href="https://open.spotify.com/artist/2nmRcoYbBVJHhzZQSspTLk"><i
+                                class="fa-brands fa-spotify"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/c/annelisnow"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div id="band6" class="griditem band6 gridband"></div>
+                <div class="band-des">
+                    <p>Chinto</p>
+                    <div class="band-social">
+                        <a target="_blank" href="http://chinto.rocks/"><i class="fa-solid fa-globe"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/this.is.chinto/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/thisischinto"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank"
+                            href="https://open.spotify.com/artist/0rjFiltIVDqAWwZpzmXY7W?si=05cbc289a592423b"><i
+                                class="fa-brands fa-spotify"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/c/annelisnow"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="stat">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Years</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Categories</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Satisfaction</div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <h2>Ready to Work Together?</h2>
-            <a href="mailto:gas.dawid@gmail.com" class="cta-button">Get in Touch</a>
-            <a href="index.html" class="cta-button secondary">Back to Home</a>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Pan Husa Enterprise. All rights reserved.</p>
+    <footer class="footer-content">
+        <div class="logo">
+        </div>
+        <p class="rights">&copy; 2026 Pan Husa Enterprise</p>
+        <div class="social">
+            <a class="instagram" target="_blank" href="https://www.instagram.com/pan_husa/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:gas.dawid@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:722744212"><i class="fa-solid fa-phone"></i></a>
+        </div>
+        <a href="#top" class="btn-up">
+            <i class="fa-sharp fa-solid fa-arrow-up fa-xl"></i>
+        </a>
     </footer>
-
-    <script src="js/app.js"></script>
-    <script src="js/gallery-carousel.js"></script>
+    <script src="js/click.js"></script>
+    <script src="js/burger.js"></script>
 </body>
+
 </html>
