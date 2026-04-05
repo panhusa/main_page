@@ -1,95 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Pan Husa Enterprise</title>
+    <title>Dawid Gąsior — Photo • Music • Code</title>
     <link rel="icon" type="image/png" href="images/PanHusa-logo.png" sizes="16x16">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/42e6e4d334.js" crossorigin="anonymous"></script>
 </head>
-
-<body>
-    <header>
-        <nav class="navbar">
-            <a class="navbar-name" href="#top">Dawid Gąsior</a>
-            <ul class="navbar-menu">
-                <li class="nav-item"><a class="photo nav-link" href="photography.html">Photography</a></li>
-                <li class="nav-item"><a class="music nav-link" href="music.html">Music</a></li>
-                <li class="nav-item"><a class="code nav-link" href="coding.html">Code</a></li>
-                <!-- <li class="nav-item"><a class="footer nav-link" href="#footer">Contact</a></li> -->
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+<body data-page="index">
+    <header class="navbar" id="navbar">
+        <div class="navbar-content">
+            <a class="navbar-brand" href="#top">Dawid Gąsior</a>
+            <nav class="navbar-menu">
+                <a href="#hero" class="nav-link">Work</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#areas" class="nav-link">Explore</a>
+                <a href="#services" class="nav-link">Tools</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="navbar-toggle" id="toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <span class="indicator-dot"></span>
+        </div>
     </header>
-    <main class="main vh-100">
-        <section class="banner">
-            <div class="header-content">
-                <div class="header-img"></div>
-                <h1 class="name">Dawid Gąsior</h1>
-                <hr class="separator">
-                <span class="typewrite" data-loop="yes" data-speed="100" data-delay="2000"
-                    data-words='["Photographer", "Musician", "Web developer"]'></span>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-portrait">
+                    <img src="images/about.jpg" alt="Dawid Gąsior" class="portrait-img">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Dawid Gąsior</h1>
+                    <p class="hero-subtitle">Photographer • Musician • Engineer</p>
+                    <p class="hero-desc">
+                        I capture moments, compose emotions, and build systems.
+                        <br>Three disciplines. One obsession: excellence.
+                    </p>
+                    <button class="cta-primary" onclick="scrollToSection('#skills')">
+                        Explore My Work <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+                <div class="hero-decoration">
+                    <div class="deco-item deco-1"></div>
+                    <div class="deco-item deco-2"></div>
+                    <div class="deco-item deco-3"></div>
+                </div>
             </div>
         </section>
-        <section class="content overflow-hidden">
-            <div class="row">
-                <a class="item" href="photography.html">
-                    <div class="item photographer">
-                        <span class="desc">Photo</span>
-                    </div>
-                </a>
-                <a class="item" href="music.html">
-                    <div class="item musician">
-                        <span class="desc">Music</span>
-                    </div>
-                </a>
-                <a class="item" href="coding.html">
-                    <div class="item coding">
-                        <span class="desc">Code</span>
-                    </div>
-                </a>
+
+        <!-- SKILLS SECTION (Controlled Chaos Grid) -->
+        <section class="skills" id="skills">
+            <div class="section-header">
+                <h2>What I Do</h2>
             </div>
-            <h1>Unveiling My Creative Journey</h1>
-            <article class="pitch">
-                <p>Hey there, welcome to my corner of the web! Here, I'm thrilled to invite you into the world of my
-                    passions and creative escapades. I'm a self-taught enthusiast who's all in, dedicating myself to
-                    these adventures and constantly striving to get better day by day.</p>
-                <hr class="vertical">
-                <p>As you wander through these digital pages, you'll find me mixing and refining my diverse interests in
-                    my own unique and innovative way. I'd love for you to come along on this ride as we dive into the
-                    fascinating realm of my hobbies. It's all about the thrill of self-discovery and the pure joy of
-                    crafting something that's unmistakably my own.</p>
+            <div class="skills-grid">
+                <div class="skill-bubble" data-skill="photography" onclick="navigateTo('/photo')">
+                    <div class="bubble-icon">📸</div>
+                    <h3>Photography</h3>
+                    <p>50+ projects | Events, Portraits, Landscapes</p>
+                    <span class="skill-tag">3+ years</span>
+                </div>
+                <div class="skill-bubble" data-skill="music">
+                    <div class="bubble-icon">🎵</div>
+                    <h3>Music</h3>
+                    <p>15 years | Bands, Solo Album, Production</p>
+                    <span class="skill-tag">Professional</span>
+                </div>
+                <div class="skill-bubble" data-skill="code">
+                    <div class="bubble-icon">💻</div>
+                    <h3>Engineering</h3>
+                    <p>Full-Stack | Systems, Web, Hardware</p>
+                    <span class="skill-tag">Advancing</span>
+                </div>
+                <div class="skill-bubble" data-skill="leadership">
+                    <div class="bubble-icon">🎯</div>
+                    <h3>Leadership</h3>
+                    <p>Team Building, Vision, Mentorship</p>
+                    <span class="skill-tag">Natural</span>
+                </div>
+                <div class="skill-bubble" data-skill="systems">
+                    <div class="bubble-icon">⚙️</div>
+                    <h3>Systems Thinking</h3>
+                    <p>Homelab, Automation, Architecture</p>
+                    <span class="skill-tag">Obsessive</span>
+                </div>
+                <div class="skill-bubble" data-skill="creative">
+                    <div class="bubble-icon">✨</div>
+                    <h3>Creativity</h3>
+                    <p>Problem Solving, Innovation, Experimentation</p>
+                    <span class="skill-tag">Relentless</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- AREA PREVIEWS (Snap Scroll) -->
+        <section class="areas" id="areas">
+            <div class="section-header">
+                <h2>My Work</h2>
+                <p class="section-subtitle">Pick your interest</p>
+            </div>
+            <div class="preview-scroll">
+                <div class="preview-card photo-preview" onclick="navigateTo('/photo')">
+                    <div class="preview-image" style="background: url('images/photo.jpg') center/cover;"></div>
+                    <div class="preview-content">
+                        <h3>Photography</h3>
+                        <p>50+ projects across events, portraits, and landscapes</p>
+                        <span class="preview-cta">Explore Gallery →</span>
+                    </div>
+                </div>
+                <div class="preview-card music-preview" onclick="navigateTo('/music')">
+                    <div class="preview-image" style="background: url('images/music.jpg') center/cover;"></div>
+                    <div class="preview-content">
+                        <h3>Music</h3>
+                        <p>15 years | Multiple bands, solo album, production</p>
+                        <span class="preview-cta">Listen →</span>
+                    </div>
+                </div>
+                <div class="preview-card code-preview" onclick="navigateTo('/tech')">
+                    <div class="preview-image" style="background: url('images/code.jpg') center/cover;"></div>
+                    <div class="preview-content">
+                        <h3>Engineering</h3>
+                        <p>Full-stack systems, web, hardware projects</p>
+                        <span class="preview-cta">View Projects →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED CASE STUDIES -->
+        <section class="case-studies">
+            <div class="section-header">
+                <h2>Featured Work</h2>
+            </div>
+            <article class="case-study case-study-1">
+                <div class="case-image">
+                    <img src="images/photo.jpg" alt="Case Study">
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">Photography</span>
+                    <h3>Event Photography Series</h3>
+                    <p>
+                        Captured 50+ professional events combining technical precision with emotional storytelling.
+                        Work with diverse lighting conditions, fast-paced environments, and high-stakes moments.
+                    </p>
+                    <div class="case-meta">
+                        <span><strong>3+ years</strong> experience</span>
+                        <span><strong>50+</strong> projects</span>
+                        <span><strong>5 clients</strong></span>
+                    </div>
+                    <button class="cta-secondary" onclick="navigateTo('/photo')">
+                        View Full Portfolio →
+                    </button>
+                </div>
+            </article>
+
+            <article class="case-study case-study-2">
+                <div class="case-content">
+                    <span class="case-tag">Music</span>
+                    <h3>15-Year Musical Journey</h3>
+                    <p>
+                        From classical training to band performances to solo album production.
+                        Currently crafting a personal opus that encapsulates my entire musical evolution.
+                    </p>
+                    <div class="case-meta">
+                        <span><strong>15 years</strong> dedication</span>
+                        <span><strong>8+ bands</strong></span>
+                        <span><strong>Solo album</strong> in progress</span>
+                    </div>
+                    <button class="cta-secondary" onclick="navigateTo('/music')">
+                        Explore Music →
+                    </button>
+                </div>
+                <div class="case-image">
+                    <img src="images/music.jpg" alt="Case Study">
+                </div>
             </article>
         </section>
-    </main>
-    <footer class="footer-content">
-        <div class="logo">
-        </div>
-        <p class="rights">&copy; 2026 Pan Husa Enterprise</p>
-        <div class="social">
-            <a class="instagram" target="_blank" href="https://www.instagram.com/pan_husa/">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:gas.dawid@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="tel:722744212"><i class="fa-solid fa-phone"></i></a>
-        </div>
-        <a href="#top" class="btn-up">
-            <i class="fa-sharp fa-solid fa-arrow-up fa-xl"></i>
-        </a>
-    </footer>
-    <script src="js/typewriting.js"></script>
-    <script src="js/burger.js"></script>
-</body>
 
+        <!-- SERVICES & TOOLS SECTION -->
+        <section class="services" id="services">
+            <div class="section-header">
+                <h2>My Tools & Services</h2>
+                <p class="section-subtitle">Self-hosted infrastructure</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="openService('http://192.168.1.101:8083')">
+                    <div class="service-icon">📚</div>
+                    <h3>Kavita</h3>
+                    <p>PDF Book Reader</p>
+                    <span class="service-tag">localhost:8083</span>
+                </div>
+                <div class="service-card" onclick="openService('http://192.168.1.101:9000')">
+                    <div class="service-icon">🐳</div>
+                    <h3>Portainer</h3>
+                    <p>Docker Management</p>
+                    <span class="service-tag">localhost:9000</span>
+                </div>
+                <div class="service-card" onclick="openService('http://192.168.1.101:3000')">
+                    <div class="service-icon">📊</div>
+                    <h3>Grafana</h3>
+                    <p>Monitoring Dashboards</p>
+                    <span class="service-tag">localhost:3000</span>
+                </div>
+                <div class="service-card" onclick="openService('http://192.168.1.101:8087')">
+                    <div class="service-icon">🔐</div>
+                    <h3>Vaultwarden</h3>
+                    <p>Password Manager</p>
+                    <span class="service-tag">localhost:8087</span>
+                </div>
+                <div class="service-card" onclick="openService('http://192.168.1.101:3001')">
+                    <div class="service-icon">🔒</div>
+                    <h3>AdGuard Home</h3>
+                    <p>DNS & Ad Blocking</p>
+                    <span class="service-tag">localhost:3001</span>
+                </div>
+                <div class="service-card" onclick="openService('http://192.168.1.101:8888')">
+                    <div class="service-icon">⚙️</div>
+                    <h3>AC Panel</h3>
+                    <p>Assetto Corsa Dashboard</p>
+                    <span class="service-tag">localhost:8888</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact" id="contact">
+            <div class="contact-content">
+                <h2>Let's Work Together</h2>
+                <p>Got a project? Let's talk.</p>
+                <div class="contact-links">
+                    <a href="mailto:gas.dawid@gmail.com" class="contact-link email">
+                        <i class="fas fa-envelope"></i> gas.dawid@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/" target="_blank" class="contact-link linkedin">
+                        <i class="fas fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/pan_husa/" target="_blank" class="contact-link instagram">
+                        <i class="fas fa-instagram"></i> @pan_husa
+                    </a>
+                </div>
+                <p class="contact-phone">
+                    <i class="fas fa-phone"></i> +48 722 744 212
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pan Husa Enterprise. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
 </html>

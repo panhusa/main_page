@@ -1,78 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering — Dawid Gąsior</title>
     <link rel="icon" type="image/png" href="images/PanHusa-logo.png" sizes="16x16">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/coding.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tech.css">
     <script src="https://kit.fontawesome.com/42e6e4d334.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <a class="navbar-name" href="index.html">Dawid Gąsior</a>
-            <ul class="navbar-menu">
-                <li class="nav-item"><a class="photo nav-link" href="photography.html">Photography</a></li>
-                <li class="nav-item"><a class="music nav-link" href="music.html">Music</a></li>
-                <li class="nav-item"><a class="code nav-link" href="coding.html">Code</a></li>
-                <!-- <li class="nav-item"><a class="footer nav-link" href="#footer">Contact</a></li> -->
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+    <header class="navbar">
+        <div class="navbar-content">
+            <a class="navbar-brand" href="index.html">Dawid Gąsior</a>
+            <nav class="navbar-menu">
+                <a href="index.html" class="nav-link">Back Home</a>
+                <a href="photography.html" class="nav-link">Photography</a>
+                <a href="music.html" class="nav-link">Music</a>
+                <a href="coding.html" class="nav-link">Engineering</a>
+            </nav>
+            <button class="navbar-toggle" id="toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
-    <main>
-        <section class="main vh-100">
-            <div class="main-content vh-100">
-                <div class="main-img">
+
+    <main class="subsystem-page tech-page">
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <h1>Engineering</h1>
+                <p class="breadcrumb">Home > Engineering</p>
+                <p class="page-desc">
+                    Full-stack systems, web applications, and hardware projects.
+                    <br>Transforming ideas into robust, elegant solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section class="tech-stack-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-category">
+                    <h3>Frontend</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">React</span>
+                    </div>
                 </div>
-                <div class="content">
-                    <h1>Welcome</h1>
-                    <p>Recently, I've ventured into the world of software development, and I must say, it's been quite
-                        the journey so far. I'm right at the beginning of this exciting path, dedicating a significant
-                        chunk of my time to absorbing all the knowledge that'll help me flourish in this industry.
-                    </p>
-                    <p>What truly captivates me about this realm is the power to transform imagination into reality. The
-                        ability to create, to mold lines of code into functional solutions, is akin to wielding a
-                        digital magic wand. It's not just about building; it's also about the thrill of the
-                        hunt—tracking down and conquering errors and bugs that lurk in the code, like solving puzzles
-                        that keep the digital world running smoothly.</p>
-                    <p>The curiosity I have about how computer languages work is insatiable. Each language is like a
-                        unique dialect, and I'm eager to decipher the intricate syntax and grammar that forms the
-                        foundation of these digital conversations. It's a field where every day is a new chapter in the
-                        story of innovation, and I can't wait to see where this magical journey leads me.</p>
+
+                <div class="tech-category">
+                    <h3>Backend</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Systems & DevOps</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Hardware</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">Raspberry Pi</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
-    <footer class="footer-content">
-        <div class="logo">
-        </div>
-        <p class="rights">&copy; 2026 Pan Husa Enterprise</p>
-        <div class="social">
-            <a class="instagram" target="_blank" href="https://www.instagram.com/pan_husa/">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:gas.dawid@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="tel:722744212"><i class="fa-solid fa-phone"></i></a>
-        </div>
-        <a href="#top" class="btn-up">
-            <i class="fa-sharp fa-solid fa-arrow-up fa-xl"></i>
-        </a>
-    </footer>
-    <script src="js/burger.js"></script>
-</body>
 
+        <!-- FEATURED PROJECTS -->
+        <section class="projects-section">
+            <h2>Featured Projects</h2>
+
+            <article class="project-card featured">
+                <div class="project-header">
+                    <h3>Homelab Infrastructure</h3>
+                    <span class="project-status">Active</span>
+                </div>
+                <p class="project-desc">
+                    Complete home server ecosystem: DNS (AdGuard), VPN (WireGuard),
+                    containerized services (Docker), monitoring (Netdata), and automation.
+                </p>
+                <div class="project-meta">
+                    <span class="meta-item">
+                        <strong>Tech:</strong> Linux, Docker, Bash, Caddy
+                    </span>
+                    <span class="meta-item">
+                        <strong>Scale:</strong> 10+ services, 24/7 uptime
+                    </span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Systems</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Infrastructure</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Life OS — Personal Operating System</h3>
+                    <span class="project-status">In Development</span>
+                </div>
+                <p class="project-desc">
+                    A custom framework for personal productivity, decision-making, and life optimization.
+                    Integrates habit tracking, goal management, and autonomous workflow systems.
+                </p>
+                <div class="project-meta">
+                    <span class="meta-item">
+                        <strong>Tech:</strong> JavaScript, Git, Markdown
+                    </span>
+                    <span class="meta-item">
+                        <strong>Impact:</strong> 365-day cycle planning
+                    </span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Framework</span>
+                    <span class="tag">Productivity</span>
+                    <span class="tag">Personal</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Assetto Corsa Server</h3>
+                    <span class="project-status">Active</span>
+                </div>
+                <p class="project-desc">
+                    Private racing simulator server with custom configurations,
+                    car collections, and performance tuning. Multi-instance architecture.
+                </p>
+                <div class="project-meta">
+                    <span class="meta-item">
+                        <strong>Tech:</strong> C++, Networking, Game Servers
+                    </span>
+                    <span class="meta-item">
+                        <strong>Network:</strong> LAN hosting, remote access
+                    </span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Games</span>
+                    <span class="tag">Networking</span>
+                    <span class="tag">Infrastructure</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Sim Racing Hardware DIY</h3>
+                    <span class="project-status">In Progress</span>
+                </div>
+                <p class="project-desc">
+                    Custom mechanical pedals and controls for racing simulators.
+                    Hall sensor-based input, 3D-printed components, embedded firmware.
+                </p>
+                <div class="project-meta">
+                    <span class="meta-item">
+                        <strong>Tech:</strong> Arduino, CAD, 3D Printing, Firmware
+                    </span>
+                    <span class="meta-item">
+                        <strong>Scope:</strong> Clutch pedal, handbrake (Bluetooth)
+                    </span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Hardware</span>
+                    <span class="tag">DIY</span>
+                    <span class="tag">Embedded</span>
+                </div>
+            </article>
+        </section>
+
+        <!-- PHILOSOPHY -->
+        <section class="philosophy-section">
+            <h2>Engineering Philosophy</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>Systems Thinking</h3>
+                    <p>I view problems holistically, understanding how components interact and scale.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Precision & Elegance</h3>
+                    <p>Code should be beautiful, maintainable, and purposeful—not over-engineered.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Continuous Learning</h3>
+                    <p>Technology evolves. I evolve with it, exploring new paradigms and tools.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Real-World Impact</h3>
+                    <p>Engineering serves people. I focus on solutions that matter, not vanity projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Have a Project in Mind?</h2>
+            <a href="mailto:gas.dawid@gmail.com" class="cta-button">Let's Talk</a>
+            <a href="index.html" class="cta-button secondary">Back to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pan Husa Enterprise. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
 </html>

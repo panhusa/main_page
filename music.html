@@ -1,108 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music — Dawid Gąsior</title>
     <link rel="icon" type="image/png" href="images/PanHusa-logo.png" sizes="16x16">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/music.css">
     <script src="https://kit.fontawesome.com/42e6e4d334.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <a class="navbar-name" href="index.html">Dawid Gąsior</a>
-            <ul class="navbar-menu">
-                <li class="nav-item"><a class="photo nav-link" href="photography.html">Photography</a></li>
-                <li class="nav-item"><a class="music nav-link" href="music.html">Music</a></li>
-                <li class="nav-item"><a class="code nav-link" href="coding.html">Code</a></li>
-                <!-- <li class="nav-item"><a class="footer nav-link" href="#footer">Contact</a></li> -->
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+    <header class="navbar">
+        <div class="navbar-content">
+            <a class="navbar-brand" href="index.html">Dawid Gąsior</a>
+            <nav class="navbar-menu">
+                <a href="index.html" class="nav-link">Back Home</a>
+                <a href="photography.html" class="nav-link">Photography</a>
+                <a href="music.html" class="nav-link">Music</a>
+                <a href="coding.html" class="nav-link">Engineering</a>
+            </nav>
+            <button class="navbar-toggle" id="toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
-    <main>
 
-        <section class="main">
-            <div class="main-content">
-                <div class="main-img">
+    <main class="subsystem-page music-page">
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <h1>Music</h1>
+                <p class="breadcrumb">Home > Music</p>
+                <p class="page-desc">
+                    15 years of dedication. From classical foundations to band performances to solo opus.
+                    <br>Currently crafting my most personal work: a solo album that encapsulates my entire journey.
+                </p>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="timeline-section">
+            <h2>Musical Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Classical Training</h3>
+                        <p>Foundation & discipline in music theory and performance</p>
+                        <span class="timeline-date">2009–2012</span>
+                    </div>
                 </div>
-                <div class="content">
-                    <h1>music</h1>
-                    <p>For a decade and a half, I've been immersed in the world of music, an incredible journey that's
-                        seen me as an integral part of numerous bands and countless exhilarating concerts. The
-                        camaraderie and harmony of playing alongside fellow musicians are moments I hold closest to my
-                        heart; it's an experience that resonates deep within my soul.
-                    </p>
-                    <p>Currently, I'm pouring my heart and soul into a solo album—an opus that will encapsulate the
-                        entirety of my musical odyssey up to this point. It's an exciting endeavor that allows me to
-                        channel all the passion, creativity, and wisdom acquired throughout this incredible musical
-                        voyage. Stay tuned, as I prepare to share this musical journey with you in a way that transcends
-                        time and melodies.
-                    </p>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Band Era Begins</h3>
+                        <p>Joined 8+ bands across various genres and scenes</p>
+                        <span class="timeline-date">2012–2023</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Solo Album Production</h3>
+                        <p>An opus encapsulating my entire musical journey and evolution</p>
+                        <span class="timeline-date">2023–Present</span>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="media">
-            <div class="main-spotify">
-                <h2>My bands</h2>
-                <div class="spotify-player">
-                    <iframe style="border-radius:12px"
-                        src="https://open.spotify.com/embed/artist/1p58r3w96fziw339KJo75c?utm_source=generator"
-                        width="100%" height="152" frameBorder="0" allowfullscreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"></iframe>
 
-                </div>
+        <!-- SPOTIFY EMBED -->
+        <section class="media-section">
+            <h2>My Bands & Collaborations</h2>
+            <div class="spotify-container">
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/artist/1p58r3w96fziw339KJo75c?utm_source=generator"
+                    width="100%" height="152" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
             </div>
-            <div class="main-youtube">
-                <h2>My covers</h2>
-                <div class="youtube-player">
-                    <iframe class="youtube-mov" src="https://www.youtube.com/embed/PgFTzuqYJW0?si=ds87Cb8skzlJL4V5"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-                    <iframe class="youtube-mov" src="https://www.youtube.com/embed/nRu2OVqtV7M?si=Qhu3eP79nK4umKmB"
+        </section>
+
+        <!-- YOUTUBE COVERS -->
+        <section class="covers-section">
+            <h2>Covers & Session Recordings</h2>
+            <div class="youtube-grid">
+                <div class="youtube-item">
+                    <iframe src="https://www.youtube.com/embed/PgFTzuqYJW0?si=ds87Cb8skzlJL4V5"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
-                    <iframe class="youtube-mov" src="https://www.youtube.com/embed/gN0ovaKpWVs?si=lOdCjDBMs19Lay2x"
+                </div>
+                <div class="youtube-item">
+                    <iframe src="https://www.youtube.com/embed/nRu2OVqtV7M?si=Qhu3eP79nK4umKmB"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="youtube-item">
+                    <iframe src="https://www.youtube.com/embed/gN0ovaKpWVs?si=lOdCjDBMs19Lay2x"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
             </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process-section">
+            <h2>Creative Process</h2>
+            <p class="process-intro">
+                Music is more than performance—it's a complete ecosystem of creation, experimentation, and growth.
+            </p>
+            <div class="process-grid">
+                <div class="process-item">
+                    <div class="process-icon">🎼</div>
+                    <h3>Composition</h3>
+                    <p>Translating emotion into melodic and harmonic structures that resonate.</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon">🎙️</div>
+                    <h3>Performance</h3>
+                    <p>Live expression and connection with audiences across diverse venues and genres.</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon">🎚️</div>
+                    <h3>Production</h3>
+                    <p>Technical mastery in recording, mixing, and polishing the final sound.</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon">🎵</div>
+                    <h3>Collaboration</h3>
+                    <p>Working with other musicians to create something greater than the sum of parts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Let's Create Something</h2>
+            <a href="mailto:gas.dawid@gmail.com" class="cta-button">Collaborate</a>
+            <a href="index.html" class="cta-button secondary">Back to Home</a>
         </section>
     </main>
-    <footer class="footer-content">
-        <div class="logo">
-        </div>
-        <p class="rights">&copy; 2026 Pan Husa Enterprise</p>
-        <div class="social">
-            <a class="instagram" target="_blank" href="https://www.instagram.com/pan_husa/">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:gas.dawid@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="tel:722744212"><i class="fa-solid fa-phone"></i></a>
-        </div>
-        <a href="#top" class="btn-up">
-            <i class="fa-sharp fa-solid fa-arrow-up fa-xl"></i>
-        </a>
-    </footer>
-    <script src="js/burger.js"></script>
-</body>
 
+    <footer>
+        <p>&copy; 2026 Pan Husa Enterprise. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
 </html>
