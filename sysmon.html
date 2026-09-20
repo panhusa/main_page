@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -146,7 +146,7 @@
 <div class="btn-widget">
   <button class="action-btn" id="cleanup-btn" onclick="runCleanup()">
     <span class="icon">🧹</span>
-    <span class="status" id="cleanup-status">wyczyść</span>
+    <span class="status" id="cleanup-status">clean</span>
   </button>
   <div class="label">RAM/CPU</div>
 </div>
@@ -162,12 +162,12 @@ async function runCleanup() {
     const r = await fetch('/action/run', { method: 'POST' });
     btn.classList.remove('running');
     btn.classList.add('done');
-    status.textContent = 'gotowe';
-    setTimeout(() => { btn.classList.remove('done'); status.textContent = 'wyczyść'; }, 4000);
+    status.textContent = 'done';
+    setTimeout(() => { btn.classList.remove('done'); status.textContent = 'clean'; }, 4000);
   } catch(e) {
     btn.classList.remove('running');
-    status.textContent = 'błąd';
-    setTimeout(() => { status.textContent = 'wyczyść'; }, 3000);
+    status.textContent = 'error';
+    setTimeout(() => { status.textContent = 'clean'; }, 3000);
   }
 }
 

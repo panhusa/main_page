@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,30 +120,30 @@
     <div class="container">
         <div class="grid">
             <div class="card">
-                <h2>⏰ Czas</h2>
+                <h2>⏰ Time</h2>
                 <div id="clock">--:--:--</div>
                 <div id="date"></div>
             </div>
 
             <div class="card">
-                <h2>🌤️ Pogoda</h2>
+                <h2>🌤️ Weather</h2>
                 <div id="weather">
-                    <div class="loading">Ładowanie...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
 
             <div class="card">
                 <h2>💻 System</h2>
                 <div id="system">
-                    <div class="loading">Ładowanie...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
         </div>
 
         <div class="notes-section">
-            <h2>📝 Notatki</h2>
-            <textarea id="notes-textarea" placeholder="Tutaj możesz dodać szybkie notatki..."></textarea>
-            <div class="notes-info">✓ Notatki są automatycznie zapisywane w przeglądarce</div>
+            <h2>📝 Notes</h2>
+            <textarea id="notes-textarea" placeholder="Add quick notes here..."></textarea>
+            <div class="notes-info">✓ Notes are automatically saved in the browser</div>
         </div>
     </div>
 
@@ -151,12 +151,12 @@
         // Clock
         function updateClock() {
             const now = new Date();
-            document.getElementById('clock').textContent = now.toLocaleTimeString('pl-PL', {
+            document.getElementById('clock').textContent = now.toLocaleTimeString('en-GB', {
                 hour: '2-digit',
                 minute: '2-digit',
                 second: '2-digit'
             });
-            document.getElementById('date').textContent = now.toLocaleDateString('pl-PL', {
+            document.getElementById('date').textContent = now.toLocaleDateString('en-GB', {
                 weekday: 'long',
                 year: 'numeric',
                 month: 'long',
@@ -184,16 +184,16 @@
                     <div class="weather-icon">${weatherIcons[current.weather_code] || '🌤️'}</div>
                     <div class="weather-temp">${Math.round(current.temperature_2m)}°C</div>
                     <div class="weather-details">
-                        💨 Wiatr: ${Math.round(current.wind_speed_10m)} km/h<br>
-                        💧 Wilgotność: ${current.relative_humidity_2m}%
+                        💨 Wind: ${Math.round(current.wind_speed_10m)} km/h<br>
+                        💧 Humidity: ${current.relative_humidity_2m}%
                     </div>
                 `;
             } catch (e) {
-                document.getElementById('weather').innerHTML = '<span class="error">Błąd ładowania pogody</span>';
+                document.getElementById('weather').innerHTML = '<span class="error">Error loading weather</span>';
             }
         }
         updateWeather();
-        setInterval(updateWeather, 300000); // Update co 5 minut
+        setInterval(updateWeather, 300000); // Update every 5 minutes
 
         // System Info via Grafana/Prometheus or simple stats
         async function updateSystem() {
@@ -211,7 +211,7 @@
                             <span class="stat-value">${cores}</span>
                         </div>
                         <div class="stat-row">
-                            <span class="stat-label">RAM (estymacja):</span>
+                            <span class="stat-label">RAM (estimate):</span>
                             <span class="stat-value">${memory} GB</span>
                         </div>
                         <div class="stat-row">
@@ -227,7 +227,7 @@
                         <span class="stat-value">✓ Online</span>
                     </div>
                     <div style="font-size: 12px; color: #666; margin-top: 10px;">
-                        Szczegóły dostępne w Grafana / Prometheus
+                        Details available in Grafana / Prometheus
                     </div>
                 `;
             }
