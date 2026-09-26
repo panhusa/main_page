@@ -29,8 +29,13 @@ font-family: 'Oswald', sans-serif; */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    outline: 0;
     scrollbar-color: #5e636e #c2c9d6;
+}
+
+/* Keyboard focus indicator (mouse clicks don't trigger :focus-visible) */
+:focus-visible {
+    outline: 2px solid var(--color6);
+    outline-offset: 2px;
 }
 
 html {

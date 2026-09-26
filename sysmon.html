@@ -159,7 +159,11 @@ async function runCleanup() {
   btn.classList.add('running');
   status.textContent = '...';
   try {
-    const r = await fetch('/action/run', { method: 'POST' });
+    const r = await fetch('/action/run', {
+      method: 'POST',
+      headers: { 'X-Sysmon-Action': '1' },
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     btn.classList.remove('running');
     btn.classList.add('done');
     status.textContent = 'done';
@@ -177,32 +181,48 @@ const ARC  = CIRC * 0.75;        // 270° = 75% of circle
 function setRing(ringId, valId, value, max) {
   const pct   = Math.min(1, Math.max(0, value / max));
   const dash  = pct * ARC;
-  const gap   = ARC - dash;
   const ring  = document.getElementById(ringId);
   ring.setAttribute('stroke-dasharray', dash.toFixed(2) + ' ' + (CIRC - dash).toFixed(2));
   document.getElementById(valId).textContent = Math.round(value);
 }
 
-async function update() {
+function clearRing(ringId, valId) {
+  document.getElementById(ringId).setAttribute('stroke-dasharray', '0 ' + CIRC.toFixed(2));
+  document.getElementById(valId).textContent = '–';
+}
+
+// Latest point of a Netdata chart as { dimensionName: value }.
+async function netdata(chart) {
+  const r = await fetch(`/netdata/api/v1/data?chart=${chart}&points=1&after=-1&format=json&_=${Date.now()}`);
+  if (!r.ok) throw new Error(`${chart}: HTTP ${r.status}`);
+  const { labels, data } = await r.json();
+  const row = {};
+  labels.forEach((name, i) => { row[name] = data[0][i]; });
+  return row;
+}
+
+// Each metric updates independently so one failing chart (e.g. a missing
+// sensor) doesn't blank the others; a failed metric shows "–" instead of a
+// stale value.
+async function metric(ringId, valId, chart, toValue, max) {
   try {
-    const [cpu, ram, temp] = await Promise.all([
-      fetch(`/netdata/api/v1/data?chart=system.cpu&points=1&after=-1&format=json&_=${Date.now()}`).then(r => r.json()),
-      fetch(`/netdata/api/v1/data?chart=system.ram&points=1&after=-1&format=json&_=${Date.now()}`).then(r => r.json()),
-      fetch(`/netdata/api/v1/data?chart=sensors.temperature_coretemp-isa-0000_temp1_Package_id_0_input&points=1&after=-1&format=json&_=${Date.now()}`).then(r => r.json()),
-    ]);
-
-    const cpuPct = cpu.data[0].slice(1).reduce((a, b) => a + b, 0);
-    setRing('cpu-ring', 'cpu-val', cpuPct, 100);
-
-    const [, free, used, cached, buffers] = ram.data[0];
-    const ramPct = used / (free + used + cached + buffers) * 100;
-    setRing('ram-ring', 'ram-val', ramPct, 100);
-
-    const tempVal = temp.data[0][1];
-    setRing('temp-ring', 'temp-val', tempVal, 100);
+    const value = toValue(await netdata(chart));
+    if (!Number.isFinite(value)) throw new Error(`${chart}: no data`);
+    setRing(ringId, valId, value, max);
   } catch(e) {
+    clearRing(ringId, valId);
     console.error('sysmon fetch error:', e);
   }
+}
+
+const sumExceptTime = row =>
+  Object.entries(row).reduce((sum, [k, v]) => k === 'time' ? sum : sum + v, 0);
+
+function update() {
+  metric('cpu-ring', 'cpu-val', 'system.cpu', sumExceptTime, 100);
+  metric('ram-ring', 'ram-val', 'system.ram', row => row.used / sumExceptTime(row) * 100, 100);
+  metric('temp-ring', 'temp-val', 'sensors.temperature_coretemp-isa-0000_temp1_Package_id_0_input',
+    row => Object.values(row)[1], 100);  // single-dimension chart: first column after time
 }
 
 update();

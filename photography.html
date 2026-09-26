@@ -21,7 +21,7 @@
                 <li class="nav-item"><a class="code nav-link" href="coding.html">Code</a></li>
                 <!-- <li class="nav-item"><a class="footer nav-link" href="#footer">Contact</a></li> -->
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" role="button" tabindex="0" aria-label="Toggle menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -85,10 +85,10 @@
             <div id="modal01" class="modal">
                 <div class="modal-inner">
                     <span class="modal-counter" id="modal-counter"></span>
-                    <button class="modal-close" id="btn1">&times;</button>
-                    <button class="modal-arrow modal-prev" id="btn-prev">&#8592;</button>
-                    <img id="img01" class="mod-img">
-                    <button class="modal-arrow modal-next" id="btn-next">&#8594;</button>
+                    <button class="modal-close" id="btn1" aria-label="Close">&times;</button>
+                    <button class="modal-arrow modal-prev" id="btn-prev" aria-label="Previous photo">&#8592;</button>
+                    <img id="img01" class="mod-img" alt="">
+                    <button class="modal-arrow modal-next" id="btn-next" aria-label="Next photo">&#8594;</button>
                 </div>
             </div>
             <h1 class="artists">Artists I work with</h1>
@@ -122,8 +122,6 @@
                                 class="fa-brands fa-instagram"></i></a>
                         <a target="_blank" href="https://www.facebook.com/bindingblankpages/"><i
                                 class="fa-brands fa-facebook"></i></a>
-                        <a target="_blank" href=""><i class="fa-brands fa-spotify"></i></a>
-                        <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
                 <div id="band3" class="griditem band3 gridband"></div>
@@ -183,8 +181,6 @@
                         <a target="_blank"
                             href="https://open.spotify.com/artist/0rjFiltIVDqAWwZpzmXY7W?si=05cbc289a592423b"><i
                                 class="fa-brands fa-spotify"></i></a>
-                        <a target="_blank" href="https://www.youtube.com/c/annelisnow"><i
-                                class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -195,18 +191,18 @@
         </div>
         <p class="rights">&copy; 2026 Pan Husa Enterprise</p>
         <div class="social">
-            <a class="instagram" target="_blank" href="https://www.instagram.com/pan_husa/">
+            <a class="instagram" target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/pan_husa/">
                 <i class="fa-brands fa-instagram"></i>
             </a>
-            <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/">
+            <a class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/in/dawid-gąsior-4a6280243/">
                 <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="mailto:gas.dawid@gmail.com">
+            <a aria-label="Email" href="mailto:gas.dawid@gmail.com">
                 <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="tel:722744212"><i class="fa-solid fa-phone"></i></a>
+            <a aria-label="Phone" href="tel:722744212"><i class="fa-solid fa-phone"></i></a>
         </div>
-        <a href="#top" class="btn-up">
+        <a href="#top" class="btn-up" aria-label="Back to top">
             <i class="fa-sharp fa-solid fa-arrow-up fa-xl"></i>
         </a>
     </footer>

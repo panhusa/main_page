@@ -1,17 +1,18 @@
 const hamburger = document.querySelector(".hamburger");
 const navbarMenu = document.querySelector(".navbar-menu");
 
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navbarMenu.classList.toggle("active");
+function setMenu(open) {
+    hamburger.classList.toggle("active", open);
+    navbarMenu.classList.toggle("active", open);
+    hamburger.setAttribute("aria-expanded", String(open));
 }
-const navLink = document.querySelectorAll(".nav-link");
 
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+hamburger.addEventListener("click", () => setMenu(!navbarMenu.classList.contains("active")));
+hamburger.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setMenu(!navbarMenu.classList.contains("active"));
+    }
+});
 
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navbarMenu.classList.remove("active");
-}
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => setMenu(false)));
