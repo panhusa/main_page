@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll) publishes this repo from `main`. Keep homelab-only
+# files and repo tooling off the public site; they stay in the repo for the
+# LAN nginx deployment.
+exclude:
+  - nginx-sysmon.conf
+  - sysmon.html
+  - widgets.html
+  - scripts/
+  - README.md
