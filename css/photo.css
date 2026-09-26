@@ -296,3 +296,20 @@ h1 {
     .modal-prev { left: 0.5rem; }
     .modal-next { right: 0.5rem; }
 }
+
+/* ===== MISSING IMAGES (marked by js/click.js) ===== */
+
+.grid-container .griditem.img-missing {
+    display: none;
+}
+
+.gridband.img-missing {
+    background: linear-gradient(135deg, var(--lt-color-gray-700), var(--lt-color-gray-900));
+    pointer-events: none;
+}
+
+.gridband.img-missing::after {
+    content: '\f001';
+    opacity: 0.35;
+    background: none;
+}

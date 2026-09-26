@@ -23,7 +23,11 @@ python3 scripts/check_assets.py   # lists HTML/CSS references to files that don'
 
 Several images referenced by the CSS (most of `images/photo-grid/`,
 `images/bands/BBP.jpg`, `chinto.jpg`) have never been committed, so a fresh
-checkout renders those tiles empty. Run the check above to see the current list.
+checkout would render those tiles empty. `js/click.js` hides gallery tiles whose
+photo fails to load (missing band photos get a placeholder), and the Coding
+header falls back to the Prague photo, so the site looks complete meanwhile.
+Everything reappears automatically once the files are committed. Run the check
+above to see the current list.
 
 ## Home page
 

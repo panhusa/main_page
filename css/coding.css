@@ -16,7 +16,8 @@
     position: relative;
     width: auto;
     height: 50vh;
-    background-image: url('../images/photo-grid/photo-grid\ \(6\).jpg');
+    /* Prague photo shows through while photo-grid (6).jpg is not deployed */
+    background-image: url('../images/photo-grid/photo-grid\ \(6\).jpg'), url('../images/home/hero-prague.jpg');
     background-size: cover;
     background-position: center;
     margin: auto 0 auto;
