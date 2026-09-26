@@ -22,6 +22,11 @@ python3 scripts/check_assets.py   # lists HTML/CSS references to files that don'
 ```
 
 Several images referenced by the CSS (most of `images/photo-grid/`,
-`images/bands/BBP.jpg`, `chinto.jpg`, `images/photo.jpg`, `code.jpg`,
-`header-pic.jpg`) have never been committed, so a fresh checkout renders
-those tiles empty. Run the check above to see the current list.
+`images/bands/BBP.jpg`, `chinto.jpg`) have never been committed, so a fresh
+checkout renders those tiles empty. Run the check above to see the current list.
+
+## Home page
+
+`index.html` + `css/home.css` (home-only styles, loaded after the shared
+`css/styles.css`). Its images are web-sized copies in `images/home/`, generated
+from originals in `images/`; the originals are untouched.

@@ -1,0 +1,470 @@
+/* ===== HOME PAGE =====
+   Loaded after styles.css on index.html only. Note: html font-size is 10px,
+   so 1rem = 10px throughout. */
+
+.home {
+    --home-bg: var(--lt-color-gray-900);
+    --home-surface: var(--lt-color-gray-800);
+    --home-line: #2c2f35;
+    --home-text: var(--lt-color-gray-300);
+    --home-muted: var(--lt-color-gray-500);
+    --home-accent: var(--color6);
+    --gutter: clamp(1.6rem, 5vw, 8rem);
+
+    background: var(--home-bg);
+    color: var(--home-text);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Undo the global heading rules from styles.css inside the home page */
+.home h1,
+.home h2,
+.home h3 {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: var(--lt-color-gray-100);
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.eyebrow {
+    margin-bottom: 1.2rem;
+    color: var(--home-accent);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+/* ----- Buttons ----- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 4.8rem;
+    padding: 0 2.4rem;
+    border: 1px solid var(--home-accent);
+    border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--home-accent);
+    color: var(--lt-color-gray-900);
+}
+
+.btn-primary:hover {
+    background: var(--color4);
+    border-color: var(--color4);
+}
+
+.btn-ghost {
+    color: var(--lt-color-gray-100);
+}
+
+.btn-ghost:hover {
+    background: rgba(245, 170, 28, 0.12);
+}
+
+/* ----- Hero ----- */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 12rem var(--gutter) 8rem;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+}
+
+/* Darken toward the text side so copy stays readable over city lights */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(17, 18, 19, 0.94) 0%, rgba(17, 18, 19, 0.78) 45%, rgba(17, 18, 19, 0.35) 100%),
+        linear-gradient(0deg, var(--home-bg) 0%, rgba(17, 18, 19, 0) 30%);
+}
+
+.hero-inner {
+    max-width: 64rem;
+}
+
+.hero-portrait {
+    display: block;
+    width: 9.6rem;
+    height: 9.6rem;
+    margin-bottom: 2.4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px var(--lt-color-gray-900), 0 0 0 5px var(--home-accent);
+}
+
+.home .hero-name {
+    font-size: clamp(5.2rem, 11vw, 12rem);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.hero-role {
+    min-height: 1.4em;
+    margin-top: 1.6rem;
+    color: var(--lt-color-gray-100);
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+/* typewriting.js output; neutralise the global .write spacing */
+.hero-role .write {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--home-accent);
+}
+
+.hero-role .blinking-cursor::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 3px;
+    vertical-align: -0.12em;
+    background: var(--home-accent);
+    animation: home-blink 1s steps(1) infinite;
+}
+
+@keyframes home-blink {
+    50% { opacity: 0; }
+}
+
+.hero-lede {
+    max-width: 48rem;
+    margin-top: 2rem;
+    color: var(--home-text);
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 3.2rem;
+}
+
+/* ----- Sections ----- */
+
+.section {
+    padding: clamp(6rem, 10vw, 12rem) var(--gutter);
+}
+
+.section-head {
+    margin-bottom: 4rem;
+}
+
+.section-head-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.6rem;
+}
+
+.home h2 {
+    font-size: clamp(3.6rem, 6vw, 6.4rem);
+    font-weight: 800;
+}
+
+.text-link {
+    color: var(--home-accent);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ----- Discipline cards ----- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 52rem;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    background: var(--home-surface);
+    color: var(--home-text);
+    text-decoration: none;
+    isolation: isolate;
+}
+
+.card-img,
+.card-code-art {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.card-img {
+    object-fit: cover;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(17, 18, 19, 0.95) 0%, rgba(17, 18, 19, 0.55) 40%, rgba(17, 18, 19, 0) 70%);
+}
+
+.card:hover .card-img,
+.card:hover .card-code-art {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 2.8rem;
+}
+
+.card-num {
+    color: var(--home-accent);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+.home .card h3 {
+    margin: 0.4rem 0 0.8rem;
+    font-size: clamp(3.4rem, 9vw, 4.4rem);
+    overflow-wrap: anywhere;
+    font-weight: 800;
+}
+
+.card p {
+    max-width: 32rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 1.6rem;
+    color: var(--home-accent);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.card-link span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.card:hover .card-link span {
+    transform: translateX(4px);
+}
+
+/* Code card: typographic "image" instead of a photo */
+.card-code-art {
+    margin: 0;
+    padding: 4rem 3.2rem;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(245, 170, 28, 0.18), transparent 50%),
+        #16181b;
+    color: var(--lt-color-gray-400);
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: clamp(1.4rem, 1.4vw, 1.8rem);
+    line-height: 1.8;
+    white-space: pre;
+}
+
+.c-k { color: #c792ea; }
+.c-p { color: #82aaff; }
+.c-s { color: #c3e88d; }
+.c-f { color: var(--home-accent); }
+
+.caret {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    margin-left: 2px;
+    vertical-align: -0.2em;
+    background: var(--home-accent);
+    animation: home-blink 1s steps(1) infinite;
+}
+
+/* ----- About ----- */
+
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(3rem, 6vw, 10rem);
+    border-top: 1px solid var(--home-line);
+    background: var(--home-surface);
+}
+
+.about-body p {
+    max-width: 62ch;
+    font-size: 1.8rem;
+    line-height: 1.8;
+}
+
+.about-body p + p {
+    margin-top: 2rem;
+}
+
+/* ----- Gallery teaser ----- */
+
+.strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+.strip a {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border-radius: 0.6rem;
+}
+
+.strip img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.3s ease;
+}
+
+.strip a:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* ----- Contact ----- */
+
+.contact {
+    border-top: 1px solid var(--home-line);
+    text-align: center;
+}
+
+.home .contact h2 {
+    text-align: center;
+}
+
+.contact-lede {
+    margin-top: 1.6rem;
+    font-size: 1.8rem;
+}
+
+.contact-actions {
+    justify-content: center;
+}
+
+/* ----- Responsive ----- */
+
+@media (max-width: 992px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-code {
+        grid-column: 1 / -1;
+        min-height: 36rem;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        align-items: flex-end;
+    }
+
+    .hero::after {
+        background: linear-gradient(0deg, var(--home-bg) 5%, rgba(17, 18, 19, 0.7) 60%, rgba(17, 18, 19, 0.45) 100%);
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 42rem;
+    }
+
+    .card-code {
+        min-height: 44rem;
+    }
+
+    .card-code-art {
+        padding: 2.8rem 2.4rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home *,
+    .home *::before,
+    .home *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
